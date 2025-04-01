@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/project_smb/gongzhugan_4.1/drivers/hdf_core/adapter/uhdf2/host/src'
+let g:netrw_dirhist_3='/home/project_smb/gongzhugan_4.1/drivers/peripheral/usb/ddk'
+let g:netrw_dirhist_2='/home/project_smb/gongzhugan_4.1/drivers/peripheral/usb/ddk/host'
+let g:netrw_dirhist_1='/home/project_smb/gongzhugan_4.1/out/arm64/targets/obj/drivers/peripheral/sensor/hdi_service/libsensor_interface_service_2.0'
+let g:netrw_dirhist_0='/home/project_smb/gongzhugan_4.1/vendor/kaihong/khdvk_rk3568_a/sharing_config'
+let g:netrw_dirhist_9='/home/project_smb/aig_0913/out/arm64/khp_rk3568j_egh200/packages/phone/vendor/etc/init'
+let g:netrw_dirhist_8='/home/project_smb/chujue_3588b/device_board_kaihong_khp_rk3588_ic801/location'
+let g:netrw_dirhist_7='/home/project_smb/gongzhugan_4.1/third_party/json'
+let g:netrw_dirhist_6='/home/project_smb/xingshan_dev/drivers/peripheral/display/hdi_service/gralloc/include'
+let g:netrw_dirhist_5='/home/project_smb/7885_release'
