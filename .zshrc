@@ -15,3 +15,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# no node
+eval "$(fnm env --use-on-cd --shell zsh)"

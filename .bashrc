@@ -2,6 +2,17 @@
 #
 # for examples
 
+# something for mac begin
+# disable bracket paste mode 
+printf "\e[?2004l"
+
+# set the locale for ohos build and perl settings
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
+
+
+# something for mac end
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
