@@ -1,1 +1,1 @@
-/home/ljx/.bashrc##os.Linux
+.bashrc##os.Linux
