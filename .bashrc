@@ -1,0 +1,1 @@
+/home/ljx/.bashrc##os.Linux
