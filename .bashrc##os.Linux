@@ -151,8 +151,8 @@ export PATH=~/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH
 
 workDir=/home/project_smb/8541e_ver3-2/
 deviceDir=/home/project_smb/8541e_ver3-2/device/board/kaihong/khdvk_sprd8541e_a/
-export NEMU_HOME=/home/ljx/coding/os1/ics2021/nemu
-export AM_HOME=/home/ljx/coding/os1/ics2021/abstract-machine
+export NEMU_HOME=~/study/ics2021-pa/nemu
+export AM_HOME=~/study/ics2021-pa/abstract-machine
 
 # history timing support
 export HISTTIMEFORMAT="%F %T: "
@@ -245,6 +245,11 @@ else
     fi
 fi
 unset __conda_setup
+
+# export PATH="/home/ljx/miniconda3/lib:$PATH"
 # <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
+
+# go
+export PATH=/usr/local/go/bin:$PATH

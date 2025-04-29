@@ -240,3 +240,5 @@ nnoremap c <ESC>:AIC<cr>
 " coc.nvim
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+tnoremap <ESC> <C-w><S-n>
