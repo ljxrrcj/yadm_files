@@ -19,6 +19,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 Plug 'chriszarate/yazi.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-rooter'
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Plug 'madox2/vim-ai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -242,3 +243,10 @@ inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 tnoremap <ESC> <C-w><S-n>
+
+" vim-rooter
+let g:rooter_patterns = ['cpu', '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json']
+
+" for file realpath
+nnoremap <C-g> <ESC>:echo expand("%:p")<cr>
+
