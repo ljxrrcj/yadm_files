@@ -20,6 +20,8 @@ Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 Plug 'chriszarate/yazi.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-rooter'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'vim-utils/vim-husk'
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Plug 'madox2/vim-ai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -250,3 +252,7 @@ let g:rooter_patterns = ['cpu', '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefi
 " for file realpath
 nnoremap <C-g> <ESC>:echo expand("%:p")<cr>
 
+" for oscyank
+"nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual

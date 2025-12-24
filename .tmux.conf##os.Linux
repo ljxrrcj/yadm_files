@@ -5,7 +5,6 @@ if-shell '[ $(uname -s) = Linux ]' \
     'set -g default-terminal "xterm-256color"'
 set -g escape-time 20
 
-set -g allow-passthrough all
 set -ga update-environment TERM
 set -ga update-environment TERM_PROGRAM
 
@@ -13,3 +12,6 @@ bind-key h select-pane -L
 bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
+
+set-clipboard external
+set-clipboard on
