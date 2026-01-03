@@ -244,10 +244,11 @@ nnoremap c <ESC>:AIC<cr>
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" for more normal esc in terminal mode
 tnoremap <ESC> <C-w><S-n>
 
 " vim-rooter
-let g:rooter_patterns = ['cpu', '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json']
+let g:rooter_patterns = ['.repo', '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json']
 
 " for file realpath
 nnoremap <C-g> <ESC>:echo expand("%:p")<cr>
@@ -256,3 +257,50 @@ nnoremap <C-g> <ESC>:echo expand("%:p")<cr>
 "nmap <leader>c <Plug>OSCYankOperator
 nmap <leader>cc <leader>c_
 vmap <leader>c <Plug>OSCYankVisual
+
+""" for better gf begin
+" 定义一个函数，用于找到包含 .git 文件夹的根目录
+function! FindGitRoot()
+    " 从当前文件所在目录开始，逐步向上查找 .git 文件夹
+    let l:current_dir = expand('%:p:h')  " 获取当前文件所在目录
+    while l:current_dir != '/' && l:current_dir != ''
+        " 检查当前目录是否包含 .git 文件夹
+        if isdirectory(l:current_dir . '/.git')
+            return l:current_dir
+        endif
+        " 向上一级目录移动
+        let l:current_dir = fnamemodify(l:current_dir, ':h')
+    endwhile
+    " 如果没有找到 .git 文件夹，返回空字符串
+    return ''
+endfunction
+
+" 去重函数：移除 path 中的重复目录
+function! RemoveDuplicatesFromPath(path)
+    " 将 path 分割为列表
+    let l:paths = split(a:path, ',')
+    " 使用字典去重
+    let l:unique_paths = {}
+    for p in l:paths
+        let l:unique_paths[p] = 1
+    endfor
+    " 返回去重后的 path 字符串
+    return join(keys(l:unique_paths), ',')
+endfunction
+
+" 定义一个函数，用于更新 path 变量
+function! UpdatePathWithGitRoot()
+    " 找到包含 .git 文件夹的根目录
+    let l:git_root = FindGitRoot()
+    if !empty(l:git_root)
+        " 将根目录及其子目录添加到 path 中
+        let &l:path = RemoveDuplicatesFromPath(&path . ',' . l:git_root . ',' . l:git_root . '/**3')
+    endif
+endfunction
+
+" 使用 BufAdd 自动命令，在新缓冲区创建时调用 UpdatePathWithGitRoot 函数
+augroup AutoUpdatePath
+    autocmd!
+    autocmd BufEnter * call UpdatePathWithGitRoot()
+augroup END
+""" for better gf end
