@@ -294,7 +294,7 @@ function! UpdatePathWithGitRoot()
     let l:git_root = FindGitRoot()
     if !empty(l:git_root)
         " 将根目录及其子目录添加到 path 中
-        let &l:path = RemoveDuplicatesFromPath(&path . ',' . l:git_root . ',' . l:git_root . '/**3')
+        let &l:path = RemoveDuplicatesFromPath(&g:path . ',' . l:git_root . ',' . l:git_root . '/**7')
     endif
 endfunction
 
