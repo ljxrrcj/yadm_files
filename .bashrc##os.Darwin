@@ -151,8 +151,8 @@ export PATH=~/toolchain/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH
 
 workDir=/home/project_smb/8541e_ver3-2/
 deviceDir=/home/project_smb/8541e_ver3-2/device/board/kaihong/khdvk_sprd8541e_a/
-export NEMU_HOME=/home/ljx/coding/os1/ics2021/nemu
-export AM_HOME=/home/ljx/coding/os1/ics2021/abstract-machine
+export NEMU_HOME=/Users/ljx/workspace/ics_study/ics2021-pa/nemu
+export AM_HOME=/Users/ljx/workspace/ics_study/ics2021-pa/abstract-machine
 
 # history timing support
 export HISTTIMEFORMAT="%F %T: "
@@ -180,9 +180,9 @@ stty -ixon
 # a copy of ctags command
 # ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --output-format=e-ctags --sort=yes ./include/linux/ drivers/tty/ drivers/usb/
 
-# qemu
-export PATH=/usr/local/bin/qemu/:$PATH
-. "$HOME/.cargo/env"
+# # qemu
+# export PATH=/usr/local/bin/qemu/:$PATH
+# . "$HOME/.cargo/env"
 
 # ranger
 alias ran="ranger"
@@ -247,3 +247,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# kexue
+alias kexue="export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087"
+alias fankexue="unset http_proxy; unset https_proxy"                    
