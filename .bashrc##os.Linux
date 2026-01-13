@@ -248,6 +248,7 @@ unset __conda_setup
 
 # go
 export PATH=~/go/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 export GOPATH=~/go_workspace
 export PATH=$GOPATH/bin:$PATH
 go env -w GO111MODULE=on
