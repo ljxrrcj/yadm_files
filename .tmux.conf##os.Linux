@@ -22,11 +22,14 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'ljxrrcj/tmux-open'
 
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'github_username/plugin_name#branch'
-# set -g @plugin 'git@github.com:user/plugin'
-# set -g @plugin 'git@bitbucket.com:user/plugin'
+# ---- tmux-resurrect + tmux-continuum：断电/重启后恢复会话 ----
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+# pane 屏幕内容不保存/不恢复（capture-pane-contents 默认 off）
+# 每次保存后记录 pane→claude session id 映射，供断电后精确恢复
+set -g @resurrect-hook-post-save-all '~/.local/bin/tmux-claude-map.sh'
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '10'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
