@@ -14,8 +14,7 @@ bind-key k select-pane -U
 bind-key l select-pane -R
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 
-set-clipboard external
-set-clipboard on
+set -s set-clipboard on
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
