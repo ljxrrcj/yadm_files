@@ -265,3 +265,9 @@ fi
 [ -f ~/setup_privoxy.sh ] && source ~/setup_privoxy.sh
 
 alias osc="osc52"
+
+# sing-box（systemd 管理，唯一配置 /etc/sing-box/config.json，http-in 监听 127.0.0.1:8118）
+alias startsing='sudo systemctl start sing-box && systemctl is-active sing-box'
+alias stopsing='sudo systemctl stop sing-box'
+alias kexue='export http_proxy=http://127.0.0.1:8118 https_proxy=http://127.0.0.1:8118'
+alias fankexue='unset http_proxy https_proxy'
