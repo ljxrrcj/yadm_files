@@ -121,8 +121,16 @@ nnoremap <C-S-Right> :vertical resize +1<CR>
 set timeoutlen=200
 set ttimeoutlen=-1
 
-"cursorline color config for termius novel color config
-highlight! Cursorline ctermbg=187 cterm=none
+"cursorline color config: dark terminal -> gray, light terminal -> light yellow
+"switch: let g:cursorline_theme = 'light', or env VIM_THEME=light
+if !exists('g:cursorline_theme')
+  let g:cursorline_theme = empty($VIM_THEME) ? 'dark' : $VIM_THEME
+endif
+if g:cursorline_theme ==# 'light'
+  highlight! Cursorline ctermbg=187 guibg=#d7d7af cterm=none gui=none
+else
+  highlight! Cursorline ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+endif
 "autocmd ColorScheme * highlight! Cursorline cterm=bold ctermbg=236
 "autocmd ColorScheme * highlight! CursorLineNr cterm=bold ctermfg=255 ctermbg=236
 set cursorline
